@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, request
 import numpy as np
 import pickle
@@ -52,4 +53,4 @@ def main():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
